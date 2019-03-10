@@ -1,0 +1,39 @@
+---
+title: "Teaching"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+## Solo Instructor
+
+*   **Math 226/267: Elementary Differential Equations**
+    Iowa State University, Ames IA, Summer 2018
+
+*   **Math 226/267: Elementary Differential Equations**
+    Iowa State University, Ames IA, Summer 2017
+    
+## Recitation Instructor
+
+*   **Math 140: College Algebra**
+    Iowa State University, Ames IA, Fall 2017
+    
+*   **Math 266/267: Elementary Differential Equations**
+    Iowa State University, Ames, IA, Spring 2017
+
+*   **Math 165: Calculus I**
+    Iowa State University, Ames, IA, Fall 2016
+    
+## Grader
+
+*   **Math 566: Discrete Optimization**
+    Iowa State University, Ames, IA, Fall 2018
+
+*   **Math 201: Introduction to Proofs**
+    Iowa State University, Ames, IA, Spring 2018
+
+*   **Math 439: Fractals and Chaos**
+    Iowa State University, Ames, IA, Spring 2018

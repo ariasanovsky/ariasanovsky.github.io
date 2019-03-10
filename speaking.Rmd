@@ -1,0 +1,48 @@
+---
+title: "Speaking"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+## Invited Talks
+
+*   **Zarankiewicz numbers and bipartite Ramsey numbers**
+    Joint Mathematics Meetings, Washinton State University, Seattle, WA. January 2016
+
+
+## Contributed Talks
+
+*   **Cut distance from hereditary properties**
+    MMMM Graduate Student Workshop, Iowa State University, Ames, IA. September 2018
+    
+*   **Small bipartite Ramsey numbers**
+    Young Mathematics Conference, Ohio State University, Columbus, OH. August 2015
+
+*   **Reciprocals of binary power series**
+    South Carolina Junior Academy of Science Annual Meeting, University of South Carolina Aiken, Aiken, SC. June 2012
+    
+## Seminar Talks
+
+*   **Decomposing random graphs into highly structures pieces**
+    Mathematics Graduate Seminar, Iowa State University, Ames, IA. February 2019
+
+*   **There's Probably Analysis and Data Science in a graphon**
+    Probability Analysis and Data Science Seminar, Iowa State University, Ames, IA. September 2018
+    
+*   **de Grey's breakthrough on the plane-coloring problem**
+    Mathematics Graduate Seminar, Iowa State University, Ames, IA. March 2018
+    
+*   **Graph limits and distance from hereditary properties**
+    Discrete Mathematics Seminar (Oral Preliminary Exam), Iowa State University, Ames, IA. March 2018
+    
+*   **Zarankiewicz numbers and bipartite Ramsey numbers**
+    Discrete Mathematics Seminar, Iowa State University, Ames, IA. October 2016
+
+*   **Chromatic Ramsey numbers and coloring triple systems**
+    Discrete Mathematics Seminar, Iowa State University, Ames, IA. September 2016
+
+*   **Chromatic Ramsey numbers for triple systems** 
+    Research Presentations, Budapest Semesters in Mathematics, McDaniel College, Budapest, Hungary. May 2015
