@@ -5,4 +5,4 @@ title: "About Me"
 
 <img src="images/2019budapest.jpeg" style = "width:25%; border:10px solid; margin-right: 20px" align="left">
 
-I am a third year Ph.D. student in the [Department of Mathematics](https://math.iastate.edu/) at Iowa State University.  My research interests include extremal and probabilistic combinatorics, graph coloring, and combinatorial limit theory.  My advisor is [Ryan Martin](https://math.iastate.edu/~rymartin/).  
+I am a third year Ph.D. student in the [Department of Mathematics](https://math.iastate.edu/) at Iowa State University.  My research interests include extremal and probabilistic combinatorics, graph coloring, and combinatorial limit theory.  My advisor is [Ryan Martin](http://orion.math.iastate.edu/rymartin/).  
