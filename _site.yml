@@ -13,6 +13,8 @@ navbar:
       href: teaching.html
     - text: "Learning"
       href: learning.html
+    - text: "Site in progress..."
+      href: dogs.html
 
 output:
   html_document:
