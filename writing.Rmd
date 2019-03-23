@@ -1,11 +1,13 @@
 ---
-title: "Writing "
+title: "Writing"
 ---
 
 ## Research Papers
 
-Gyárfás András, Riasanovsky, Alexander W. N.; Sherman-Bennet, Melissa U., Chromatic Ramsey numbers of acyclic hypergraphs, *Discrete Math*., 340 (2017), no. 3, 373-378
+Steven N. Harding, Alexander W. N. Riasanovsky, Moments of the weighted Cantor measures (submitted). 
 
-Collins, Alex; Radziszowski, Stanislaw; Riasanovsky Alexander W. N.; Wallace, John C., Zarankiewicz numbers and bipartite Ramsey numbers, *Journal of Algorithms and Computation*, 47 (2016), no. 1, 63-78.
+András Gyárfás, Alexander W. N. Riasanovsky, Melissa U. Sherman-Bennet, Chromatic Ramsey numbers of acyclic hypergraphs, *Discrete Math*., 340 (2017), no. 3, 373-378
 
-Cooper, Joshua N.; Riasanovsky, Alexander W.N., On the reciprocal of the binary generating function for the sum of divisors, *J. Integer Seq*., 16 (2013), no. 1, Article 13.18, 13 pp.
+Alex Collins, Stanislaw Radziszowski, Alexander W. N. Riasanovsky, John C. Wallace, Zarankiewicz numbers and bipartite Ramsey numbers, *Journal of Algorithms and Computation*, 47 (2016), no. 1, 63-78.
+
+Joshua N. Cooper, Alexander W. N. Riasanovsky, On the reciprocal of the binary generating function for the sum of divisors, *J. Integer Seq*., 16 (2013), no. 1, Article 13.18, 13 pp.
