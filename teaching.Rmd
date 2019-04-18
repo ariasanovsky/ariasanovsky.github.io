@@ -10,10 +10,10 @@ output:
 
 ## Solo Instructor
 
-*   **Math 226/267: Elementary Differential Equations**
+*   **Math 266/267: Elementary Differential Equations**
     Iowa State University, Ames IA, Summer 2018
 
-*   **Math 226/267: Elementary Differential Equations**
+*   **Math 266/267: Elementary Differential Equations**
     Iowa State University, Ames IA, Summer 2017
     
 ## Recitation Instructor

@@ -6,3 +6,5 @@ title: "About Me"
 <img src="images/2019budapest.jpeg" style = "width:25%; border:10px solid; margin-right: 20px" align="left">
 
 I am a third year Ph.D. student in the [Department of Mathematics](https://math.iastate.edu/) at Iowa State University.  My research interests include extremal and probabilistic combinatorics, graph coloring, and combinatorial limit theory.  My advisor is [Ryan Martin](http://orion.math.iastate.edu/rymartin/).  
+
+In Spring 2019, I am supported by the ISU Department of Mathematics Lambert Research Award and was a Long-Term Visitor of Daniel Kráľ under [European Research Council Consolidator Grant on Large Discrete Structures](https://www.fi.muni.cz/research/ladist/).  From Fall 2019 to Summer 2020, I will be supported by the [Research Training Group: Combinatorics, Computation and Applications](https://sites.google.com/view/rtgisu/) at Iowa State University under NSF award DMS-1839918.  
