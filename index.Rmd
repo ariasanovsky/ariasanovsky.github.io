@@ -9,4 +9,4 @@ My name is Alexander W. Neal Riasanovsky.  I am a fourth year Ph.D. student in t
 
 From Fall 2019 through Summer 2020, I was supported by [NSF award DMS-1839918 (RTG)](https://sites.google.com/view/rtgisu/) at Iowa State University.  
 
-In Spring 2019, I was supported by the ISU Department of Mathematics Lambert Research Award and was a Long-Term Visitor of Daniel Kráľ under [European Research Council Consolidator Grant on Large Discrete Structures](https://www.fi.muni.cz/research/ladist/).  
+In Spring 2019, I was a Long-Term Visitor of Daniel Kráľ under [European Research Council Consolidator Grant on Large Discrete Structures](https://www.fi.muni.cz/research/ladist/).  I was also supported by the ISU Department of Mathematics Lambert Research Award at this time.  
