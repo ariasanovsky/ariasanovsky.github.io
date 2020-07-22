@@ -5,7 +5,7 @@ title: "About Me"
 
 <img src="images/2019budapest.jpeg" style = "width:25%; border:10px solid; margin-right: 20px" align="left">
 
-My name is Alexander W. Neal Riasanovsky.  I am a fourth year Ph.D. student in the [Department of Mathematics](https://math.iastate.edu/) at Iowa State University.  My research interests include extremal and probabilistic combinatorics, graph coloring, and combinatorial limit theory.  My advisor is [Ryan Martin](http://orion.math.iastate.edu/rymartin/).  
+My name is Alex W. N. Riasanovsky.  I am a fourth year Ph.D. student in the [Department of Mathematics](https://math.iastate.edu/) at Iowa State University.  My research interests include extremal and probabilistic combinatorics, graph coloring, and combinatorial limit theory.  My advisor is [Ryan Martin](http://orion.math.iastate.edu/rymartin/).  
 
 From Fall 2019 through Summer 2020, I was supported by [NSF award DMS-1839918 (RTG)](https://sites.google.com/view/rtgisu/) at Iowa State University.  
 
