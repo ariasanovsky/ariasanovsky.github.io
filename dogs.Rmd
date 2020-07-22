@@ -4,3 +4,6 @@
 <img src="images/2018_jagger_goof.jpg" style = "width:25%; border:10px solid; margin-right: 20px" align="left">
 
 My website is under construction.  In the meantime, please enjoy this dog.  
+
+
+Interestingly, my great uncle Nicholas V. Riasanovsky, who was an author and Russian history professor, is cited in the article [Around the Graves of Petrovskii and Pontryagin ](https://www.researchgate.net/profile/Pieter_Maritz/publication/289954413_Around_the_graves_of_petrovskii_and_Pontryagin/links/57273c4708aee491cb411c28/Around-the-graves-of-petrovskii-and-Pontryagin.pdf).  

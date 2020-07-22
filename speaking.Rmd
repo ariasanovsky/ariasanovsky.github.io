@@ -9,9 +9,11 @@ output:
 
 ## Invited Talks
 
-*   **Zarankiewicz numbers and bipartite Ramsey numbers**
-    Joint Mathematics Meetings, Washinton State University, Seattle, WA. January 2016
+*   **Partitioning random graphs with Turán graphs**
+    Combinatorics seminar, Alfred Rényi Institute, Budapest, Hungary. December 2019
 
+*   **Zarankiewicz numbers and bipartite Ramsey numbers**
+    Joint Mathematics Meetings, Washington State Convention Center, Seattle, WA. January 2016
 
 ## Contributed Talks
 
