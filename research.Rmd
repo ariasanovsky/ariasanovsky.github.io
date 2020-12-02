@@ -1,0 +1,21 @@
+---
+title: "Research"
+---
+
+I am mainly interested in extremal and probabilistic combinatorics.  I also enjoy spectral graph theory and analysis.  I'm a firm believer in the experimental side of theoretical mathematics.  Much of my work is aided by code I write, especially in sage.  You may also read my [research statement](./docs/ResearchStatement.pdf) and [CV](./docs/CV.pdf).  
+
+My dissertation work revolves around the edit distance problem.  Informally we ask, "How much work is needed to remove a fixed graph from an arbitrary host graph?".  Stated differently, fix some graph F.  What is the maximum proportion of edits (edge-additions and edge-deletion) that must be made to an arbitrary graph G to ensure that G contains no induced copy of F?  I gave a [talk](https://www.youtube.com/watch?v=ZtxYvUB57a0) at the USC Discrete Mathematics seminar on the case where the "fixed" graph F is an Erdős–Rényi random graph.  
+
+## Research Papers
+
+* Ryan R. Martin, Alexander W. N. Riasanovsky, On the edit distance function of the random graph (submitted, 2020).  [arXiv](https://arxiv.org/abs/2007.08409)
+
+* Jane Breen, Steve Butler, Melissa Fuentes, Bernard Lidický, Michael Phillips, Alexander W. N. Riasanovksy, Sung-Yell Song, Ralihe R. Villagrán, Cedar Wiseman, Xiaohong Zhang, Hadamard diagonalizable graphs of order at most 36 (submitted, 2020).  [arXiv](https://arxiv.org/abs/2007.09235)
+
+* Steven N. Harding, Alexander W. N. Riasanovsky, Moments of the weighted Cantor measures, *Demonstr. Math.*, **52** (2019), no. 1, 256-273. [arXiv](https://arxiv.org/abs/1908.05358)
+
+* András Gyárfás, Alexander W. N. Riasanovsky, Melissa U. Sherman-Bennet, Chromatic Ramsey numbers of acyclic hypergraphs, *Discrete Math*., **340** (2017), no. 3, 373-378.  [arXiv](https://arxiv.org/abs/1509.00551)
+
+* Alex Collins, Stanislaw Radziszowski, Alexander W. N. Riasanovsky, John C. Wallace, Zarankiewicz numbers and bipartite Ramsey numbers, *Journal of Algorithms and Computation*, **47** (2016), no. 1, 63-78.  [arXiv](https://arxiv.org/abs/1604.01257)
+
+* Joshua N. Cooper, Alexander W. N. Riasanovsky, On the reciprocal of the binary generating function for the sum of divisors, *J. Integer Seq*., **16** (2013), no. 1, Article 13.18, 13 pp. [arXiv](https://arxiv.org/abs/1409.2909)

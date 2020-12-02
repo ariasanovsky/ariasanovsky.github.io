@@ -1,0 +1,89 @@
+---
+title: "Talks"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+## Invited Talks
+
+*   **On the edit distance function of random graphs**
+    Fall Western AMS Sectional Meeting (formerly at University of Utah). Special Session
+on Graphs, Hypergraphs and Set Systems. October 2019
+
+*   **On the edit distance function of random graphs**
+    Fall Southeastern AMS Sectional Meeting (formerly at University of Tennessee at
+Chattanooga). Special Session on Structural and Extremal Graph Theory, II. October 2019
+
+*   **Partitioning random graphs with Turán graphs**
+    Combinatorics seminar, Alfred Rényi Institute, Budapest, Hungary. December 2019
+
+*   **Zarankiewicz numbers and bipartite Ramsey numbers**
+    Joint Mathematics Meetings, Washington State Convention Center, Seattle, WA. January 2016
+
+## Contributed Talks
+
+*   **Cut distance from hereditary properties**
+    MMMM Graduate Student Workshop, Iowa State University, Ames, IA. September 2018
+    
+*   **Small bipartite Ramsey numbers**
+    Young Mathematics Conference, Ohio State University, Columbus, OH. August 2015
+
+*   **Reciprocals of binary power series**
+    South Carolina Junior Academy of Science Annual Meeting, University of South Carolina Aiken, Aiken, SC. June 2012
+    
+## Seminar Talks
+
+*   **Decomposing random graphs into highly structures pieces**
+    Mathematics Graduate Seminar, Iowa State University, Ames, IA. February 2019
+
+*   **There's Probably Analysis and Data Science in a graphon**
+    Probability Analysis and Data Science Seminar, Iowa State University, Ames, IA. September 2018
+    
+*   **de Grey's breakthrough on the plane-coloring problem**
+    Mathematics Graduate Seminar, Iowa State University, Ames, IA. March 2018
+    
+*   **Graph limits and distance from hereditary properties**
+    Discrete Mathematics Seminar (Oral Preliminary Exam), Iowa State University, Ames, IA. March 2018
+    
+*   **Zarankiewicz numbers and bipartite Ramsey numbers**
+    Discrete Mathematics Seminar, Iowa State University, Ames, IA. October 2016
+
+*   **Chromatic Ramsey numbers and coloring triple systems**
+    Discrete Mathematics Seminar, Iowa State University, Ames, IA. September 2016
+
+*   **Chromatic Ramsey numbers for triple systems** 
+    Research Presentations, Budapest Semesters in Mathematics, McDaniel College, Budapest, Hungary. May 2015
+    
+## Conferences and Workshops Attended
+
+*   **(co-organizer) Mostly Manitoba, Michigan and Minnesota Combinatorics Graduate Students Workshop**, Iowa State University, Ames, IA. September 2018
+
+*   **NSF-CBMS Conference on Additive Combinatorics**
+    University of South Carolina, Columbia, SC. May 2018
+
+*   **Georgia Discrete Analysis Conference**
+    University of Georgia, Athens, GA. May 2018
+    
+*   **International Workshop on Graph Limits**
+    École Normale Supérieure de Lyon, Lyon, France. Spring 2018
+
+*   **International Research School on Graph Limits**
+    École Normale Supérieure de Lyon, Lyon, France. January 2018
+    
+*   **Graduate Research Workshop in Combinatorics**
+    University of Colorado Denver & University of Denver, Denver, CO. July 2017
+
+*   **4th Lake Michigan Workshop on Combinatorics**
+    Western Michigan University, Kalamazoo, MI. April 2017
+
+*   **Joint Mathematics Meeting**
+    Washington State Convention Center, Seattle, WA. January 2016
+
+*   **Young Mathematics Conference**
+    Ohio State University, Columbus, OH. August 2015
+    
+*   **South Carolian Junior Academy of Science Annual Meeting**
+    University of South Carolina Aiken, Aiken, SC. February 2012

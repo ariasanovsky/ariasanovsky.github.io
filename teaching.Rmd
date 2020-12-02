@@ -6,6 +6,8 @@ output:
     toc_float: true
 ---
 
+I am a firm believer in active and enjoyable learning environments.  I also strive to lower the barriers that students from underrepresented groups face in education.  If you want to know more about me, take a look at my [teaching statement](./docs/ResearchStatement.pdf) and my [diversity statement](./docs/ResearchStatement.pdf).  
+
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 ## Solo Instructor
@@ -18,6 +20,9 @@ output:
     
 ## Recitation Instructor
 
+*   **Math 265: Multivariate Calculus**
+    Iowa State University, Ames IA, Fall 2020
+    
 *   **Math 140: College Algebra**
     Iowa State University, Ames IA, Fall 2017
     
