@@ -6,7 +6,7 @@ output:
     toc_float: true
 ---
 
-I am a firm believer in active and enjoyable learning environments.  I also strive to lower the barriers that students from underrepresented groups face in education.  If you want to know more about me, take a look at my [teaching statement](./docs/ResearchStatement.pdf) and my [diversity statement](./docs/ResearchStatement.pdf).  
+I am a firm believer in active and enjoyable learning environments.  I also strive to lower the barriers that students from underrepresented groups face in education.  If you want to know more about me, take a look at my [teaching statement](./docs/TeachingStatement.pdf) and my [diversity statement](./docs/DiversityStatement.pdf).  
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
