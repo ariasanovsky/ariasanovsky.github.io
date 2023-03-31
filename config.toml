@@ -1,0 +1,47 @@
+# The URL the site will be built for
+base_url = "https://riasanovsky.me"
+
+title = "Dr. Alex Riasanovsky"
+
+# Whether to automatically compile all Sass files in the sass directory
+generate_feed = true
+compile_sass = true
+minify_html = true
+
+taxonomies = [
+    {name = "tags", feed = true},
+]
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "shadharon"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "css"
+
+[extra]
+# Put all your custom variables here
+toc = true
+use_cdn = false
+
+#Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.ico"
+favicon = "self.jpg"
+
+#This header image is used for SEO. For example if you were to share an image via Messenger/Instagram/Twitter a preview picture is also presented
+headerImage = "self.jpg"
+
+# The icon is display besides the menu text but is not necessary. It needs to be placed under "menu_icon" in the static "folder"
+menu = [
+    { name = "Projects",    url = "/projects",  weight = 1, icon = "projects.png" },
+    { name = "About",       url = "/about",     weight = 2, icon = "self.jpg" }
+]
+#The icons available can be found in "social_icons" in the "static" folder
+socials = [
+    { name = "github",  url = "https://github.com/ariasanovsky/",   icon = "github" },
+    { name = "twitter", url = "https://twitter.com/AlexMath0",      icon = "twitter" },
+    { name = "twitch",  url = "https://www.twitch.tv/alexmath0/",   icon = "twitch" },
+]
