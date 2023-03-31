@@ -3,6 +3,10 @@
 Made using [Zola](https://www.getzola.org/).
 Thanks [SZM](https://syedzayyan.com/) for making the theme!
 
+## "Installing" Zola on Windows
+- I copied the `x64` binary from the `zola` [releases](https://github.com/getzola/zola/releases), named it `zola.exe`, moved it to `C:\Users\[MY_NAME]\.zola` so it's nice and snug next to `.cargo`.
+- There's nothing to "install", it's just a `rust` binary that requires command-line args. Add the permanent home for `zola.exe` to `PATH` in your environment variables. This may require restarting the terminals and IDEs you are using since they usually read `PATH` when they open.
+
 ## Notes on using Zola
 - To minimize mishaps, `zola init [YOUR_GITHUB_NAME].github.io` when you make your site. Thank me later.
 - Immediately `cd [YOUR_GITHUB_NAME].github.io` and `zola serve`.
