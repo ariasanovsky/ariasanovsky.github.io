@@ -25,3 +25,6 @@ Thanks [SZM](https://syedzayyan.com/) for making the theme!
   - Token? Consider a manual token.
   - Explicit build failure? Make sure you can serve your site from a fresh clone (on the version in the action script).
 - Site rendering nothing? You probably didn't switch the deployment branch to `gh-pages`.
+
+## Site alias
+- If you have a domain other than `[YOUR_GITHUB_NAME].github.io`, there's a step that calls for putting `CNAME` in `static/` as well. No harm in having it in both places.
