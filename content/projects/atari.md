@@ -1,6 +1,6 @@
 +++
 title = "Applying deep Q learning to Atari games"
-description = "Resolving a central problem in extremal-spectral graph theory."
+description = "Solving emulated Atari games through deep Q reinforcement learning, CNNs, and image processing."
 weight = 1
 
 [extra]

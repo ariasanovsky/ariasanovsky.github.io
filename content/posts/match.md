@@ -26,9 +26,11 @@ fn bar(x: f64, k: i32) -> f64 {
     match k.cmp(&0) {
         Less  => 0.,
         Equal => 1.,
-        _ => (0..k)
-            .map(|i| (x - i as f64) / (k - i) as f64)
-            .product()
+        Greater => (0..k)
+            .map(|i|
+                (x - i as f64) / 
+                (k - i) as f64
+            ).product()
     }
 }
 ```
