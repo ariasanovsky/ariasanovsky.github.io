@@ -10,6 +10,8 @@ tags = ["spring", "dfdx", "ergonomic errors", "design patterns", "CI/CT/CD"]
 
 What fantastic weather. What a cathartic run. Angus loved the view from the window and skittered all around the house in excitement.
 
+<img height = "300px" src="/angus/spring_boy_zero_thoughts_in_his_head.jpg" />
+
 ## Today I have been thinking about
 
 - our tech stack: what does modern code look like? how can I help without overstepping?
