@@ -134,6 +134,19 @@ fn to_floats(string: &str) -> Result<Vec<f64>, String> {
 }
 ```
 
+## A perfect function
+
+```rust
+fn to_floats(string: &str) -> Result<Vec<f64>, ParseFloatError> {
+    string
+        .split_whitespace()
+        .map(|sub_string| 
+        sub_string
+            .parse()
+    ).collect()
+}
+```
+
 ## WAIT NO I THOUGHT I HATED CATEGORY THEORY
 
 It was functors and monads all along.
