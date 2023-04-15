@@ -11,7 +11,7 @@ tags = ["rust", "functional programming", "iteractory", "lazy evaluation"]
 ```rust
 fn to_floats(string: &str) -> Vec<f64> {
     let mut floats: Vec<f64> = vec![];
-    todo!()
+    todo!();
     return floats;
 }
 ```
