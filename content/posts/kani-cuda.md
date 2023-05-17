@@ -209,7 +209,7 @@ Here we `assert!` that `any` `input` to the `function_under_test` which meets th
 It does so by converting the problem to a boolean SAT formula ([SAT solvers are fun!](https://github.com/ariasanovsky/had-to-sat)) and trying to write a proof.
 We encode `input` and `output` by assigning each bit a boolean variable.
 The SAT formula asserts that there exists an `input` whose `output` does not meet specifications.
-Manay thousands of dummy variables are introduced to calculate `output` from `input` through `function_under_test`.
+Many thousands of dummy variables are introduced to calculate `output` from `input` through `function_under_test`.
 
 When given a boolean formula in CNF, a SAT solver either produces:
 
