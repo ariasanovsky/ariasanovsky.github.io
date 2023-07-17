@@ -73,7 +73,7 @@ The [attribute macro](https://doc.rust-lang.org/reference/procedural-macros.html
 1. regulating the signature of `square_over_two`
 2. generating a ptx crate `square_over_two`
 3. compiling the crate and emitting `$KERNEL/path/to/kernel.ptx`
-4. defining the [GAT](https://blog.rust-lang.org/2022/10/28/gats-stabilization.html) `pub trait _SquareOverTwo`
+4. defining `trait _SquareOverTwo` with a `General Associated Type`
 5. implementing `_SquareOverTwo` for `i32` with `Return = Vec<i32>`
 6. defining the standalone launcher `_square_over_two`
 
