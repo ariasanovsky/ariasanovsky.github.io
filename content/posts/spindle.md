@@ -125,7 +125,7 @@ pub unsafe extern "ptx-kernel" fn kernel(output: *mut i32, size: i32)
     while i < size {
         let value = device::device(i);
         *output.offset(i as isize) = value;
-        i += i.wrapping_add(n_threads);
+        i = i.wrapping_add(n_threads);
     }
 }
 ```
