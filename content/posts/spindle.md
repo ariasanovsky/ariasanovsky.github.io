@@ -27,11 +27,11 @@ fn main() {
 
 ## Thanks 💖
 
-I am especially grateful to friends and interested Rustaceans for their support! Feedback ranged from nodding in agreement, design suggestions, memes, and most importantly, helping me come up with the name! We can't not take inspiration from [`rayon`](https://docs.rs/rayon/latest/rayon/), the seamlessly *lighter than silk* CPU parallelization craate. Honorable mentions to `throstle`, `coreduroy` (*sigh*), and `curayon`.
+I am especially grateful to friends and interested Rustaceans for their support! Feedback ranged from nodding in agreement, design suggestions, memes, and most importantly, helping me come up with the name! We can't not take inspiration from [`rayon`](https://docs.rs/rayon/latest/rayon/), the *lighter than silk* CPU parallelization crate. Honorable mentions to `serger`, `throstle`, `coreduroy` (*sigh*), and `curayon`.
 
 ## Scientific Computing in Rust
 
-The [conference](https://scientificcomputing.rs/) was fantastic! The organizers did a fantastic job organizing the talks, communicated clearly, and facilitated a Gather Town social hour that was very hard to leave. It was heartwarming to see 100+ people show up for the first event. Special shoutouts to Gonzalo, Miguel, Ryan, and Sarah. Great job on your talks, everyone.
+The [conference](https://scientificcomputing.rs/) was fantastic! The organizers did a fantastic job organizing the talks, communicated clearly, and facilitated a Gather Town social hour that was very hard to leave. It was heartwarming to see 100+ people show up for the first event. Special shoutouts to Gonzalo, Miguel, Ryan, and Sarah. Great job on your talks, everyone. It was a pleasure to meet you, and I look forward to collaborating 🔬.
 
 Also, what a beautiful coincidence to be releasing the first draft of `spindle` after nearly 10 hours of directly or tangentially related talk! I am inspired to meet the need for ergonomic GPGPU parallelism in Rust.
 
