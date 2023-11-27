@@ -1,3 +1,6 @@
 [submodule "themes/shadharon"]
 	path = themes/shadharon
 	url = https://github.com/syedzayyan/shadharon
+[submodule "themes/KaTeX"]
+	path = themes/KaTeX
+	url = https://github.com/KaTeX/KaTeX
