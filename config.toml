@@ -43,5 +43,5 @@ menu = [
 socials = [
     { name = "github",  url = "https://github.com/ariasanovsky/",   icon = "github" },
     { name = "twitter", url = "https://twitter.com/AlexMath0",      icon = "twitter" },
-    { name = "twitch",  url = "https://www.twitch.tv/alexmath0/",   icon = "twitch" },
+    # { name = "twitch",  url = "https://www.twitch.tv/alexmath0/",   icon = "twitch" },
 ]
