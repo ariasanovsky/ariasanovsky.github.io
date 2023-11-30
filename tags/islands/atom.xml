@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Dr. Alex Riasanovsky - islands</title>
+	<link href="https://riasanovsky.me/tags/islands/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://riasanovsky.me"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2023-04-26T00:00:00+00:00</updated>
+	<id>https://riasanovsky.me/tags/islands/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Resetting from Italy</title>
+		<published>2023-04-26T00:00:00+00:00</published>
+		<updated>2023-04-26T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://riasanovsky.me/posts/2023-apr-italy/" type="text/html"/>
+		<id>https://riasanovsky.me/posts/2023-apr-italy/</id>
+		<content type="html">&lt;h2 id=&quot;i-made-a-picture&quot;&gt;I made a picture&lt;&#x2F;h2&gt;
+&lt;img height = &quot;100px&quot; src=&quot;&#x2F;menu_icon&#x2F;r3333.png&quot; &#x2F;&gt;
+&lt;p&gt;R(3,3,3,3) &amp;gt; 28, color me shocked!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lost-terminal&quot;&gt;Lost terminal&lt;&#x2F;h2&gt;
+&lt;p&gt;It&#x27;s a &lt;a href=&quot;https:&#x2F;&#x2F;open.spotify.com&#x2F;show&#x2F;3onjLu5dY5HP93I9QIqzzU?si=c7b88aeb396749bc&quot;&gt;lovely podcast&lt;&#x2F;a&gt; by one of my &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;@NoBoilerplate&quot;&gt;favorite YouTubers&lt;&#x2F;a&gt;.
+I think until I run out of episodes, I will start my day with it.
+Perhaps I will listen to it on loop while I do chores.
+It&#x27;s secretly Daoist and pro mental health.
+Makes you root for the lonely robot.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;italy-was-pretty&quot;&gt;Italy was pretty&lt;&#x2F;h2&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_045411.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230417_131610.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_045444.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_050100.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_050942.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_075348.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_081808.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_093724.jpg&quot; &#x2F;&gt;
+&lt;h2 id=&quot;i-ate-a-lot-of-lovely-food&quot;&gt;I ate a lot of lovely food&lt;&#x2F;h2&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230418_145106.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230419_144306.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230419_144311.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230420_151443.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_064941.jpg&quot; &#x2F;&gt;
+&lt;p&gt;So much pizza marinara.
+The wine bottle was longer than my forearm.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;animals-hat-and-the-aleph-shaped-road&quot;&gt;Animals, hat, and the aleph-shaped road&lt;&#x2F;h2&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_044634.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_044339.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_044309.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_092528.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230422_030910.jpg&quot; &#x2F;&gt;
+&lt;h2 id=&quot;home-safely&quot;&gt;Home safely&lt;&#x2F;h2&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230426_170711.jpg&quot; &#x2F;&gt;
+&lt;img height = &quot;200px&quot; src=&quot;&#x2F;2023-italy&#x2F;20230425_174840.jpg&quot; &#x2F;&gt;
+&lt;p&gt;... with Angus and shrimp (lowercase).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rust-thoughts&quot;&gt;Rust thoughts&lt;&#x2F;h2&gt;
+&lt;p&gt;Drifting back to coding after travel.
+Misc thoughts:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lib.rs&#x2F;crates&#x2F;clap&quot;&gt;clap&lt;&#x2F;a&gt; for smart arg parsing, &lt;code&gt;serde&lt;&#x2F;code&gt;, &lt;code&gt;Display&lt;&#x2F;code&gt;, &lt;code&gt;bench&lt;&#x2F;code&gt;, and testing crates&lt;&#x2F;li&gt;
+&lt;li&gt;I want to &lt;a href=&quot;https:&#x2F;&#x2F;www.urbandictionary.com&#x2F;define.php?term=riir&quot;&gt;riir&lt;&#x2F;a&gt; a &lt;a href=&quot;https:&#x2F;&#x2F;i.imgur.com&#x2F;crLWQwt.jpeg&quot;&gt;few things&lt;&#x2F;a&gt;...
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nauty&lt;&#x2F;code&gt; (ha!), but there&#x27;s already a few crates that interface with it and g6&lt;&#x2F;li&gt;
+&lt;li&gt;Bernard&#x27;s &lt;code&gt;flagmatic&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;my &lt;code&gt;interval arithmetic&lt;&#x2F;code&gt; repo&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;sts cuda search&lt;&#x2F;code&gt;, I love enums &amp;amp; rich algebraic type systems&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Priority (tabular Ramsey AI):&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;extricate the 2nd hash map&lt;&#x2F;li&gt;
+&lt;li&gt;parallelize smarter with measured speedup&lt;&#x2F;li&gt;
+&lt;li&gt;extract a discrete differential optimization &lt;strong&gt;crate&lt;&#x2F;strong&gt;(!)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Next (NN Ramsey):&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;implement with &lt;code&gt;dfdx&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;extract a discrete (optionally differential?) optimziation &lt;strong&gt;crate&lt;&#x2F;strong&gt;(!!)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+</feed>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Dr. Alex Riasanovsky - agile</title>
+	<link href="https://riasanovsky.me/tags/agile/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://riasanovsky.me"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2023-04-02T00:00:00+00:00</updated>
+	<id>https://riasanovsky.me/tags/agile/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Becoming a better dev</title>
+		<published>2023-04-02T00:00:00+00:00</published>
+		<updated>2023-04-02T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://riasanovsky.me/posts/meditations/" type="text/html"/>
+		<id>https://riasanovsky.me/posts/meditations/</id>
+		<content type="html">&lt;h2 id=&quot;what-software-development-means-to-me&quot;&gt;What software development means to me&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;m a competent mathematical problem-solver, but what does that mean for software development?
+This week I&#x27;ve been exploring&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;9K20e7jlQPA&quot;&gt;agile simplified&lt;&#x2F;a&gt;: do what is valuable, make a working product quickly without interruption, trash it if necessary, and collaborate
+&lt;ul&gt;
+&lt;li&gt;use right tools for the job? prioritize working code over methodologies and documentation (though Rust does the latter so well by default)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;ripgrep&lt;&#x2F;code&gt; has been the best &lt;code&gt;grep&lt;&#x2F;code&gt; for years, but &lt;code&gt;grep&lt;&#x2F;code&gt; is best for projects with mixed encodings&lt;&#x2F;li&gt;
+&lt;li&gt;CI&#x2F;CD is actually pretty easy (this site is also on a pipeline!)&lt;&#x2F;li&gt;
+&lt;li&gt;only commit working code that is better than the previous version&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;giWCdQ7fnQU&quot;&gt;monads&lt;&#x2F;a&gt;: I&#x27;m finally enjoying category theory!
+&lt;ul&gt;
+&lt;li&gt;this means your type system has some consistency and structure that you probably want desperately&lt;&#x2F;li&gt;
+&lt;li&gt;Rust&#x27;s &lt;code&gt;Enum&lt;&#x2F;code&gt; handles this beautifully, I&#x27;ll explain more later&lt;&#x2F;li&gt;
+&lt;li&gt;I&#x27;ll get around to Haskell eventually 😇&lt;&#x2F;li&gt;
+&lt;li&gt;There is no happy&#x2F;sad path, only valid and invalid states&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Box, Rc, Arc&lt;&#x2F;code&gt; are &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;CTTiaOo4cbY&quot;&gt;alien&lt;&#x2F;a&gt; at first, but so is anything novel&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;NNU6cbG96M4&quot;&gt;constexpr is overrated and a bit messy&lt;&#x2F;a&gt;: is the design is wrong?
+&lt;ul&gt;
+&lt;li&gt;is Circle the savior of C++?&lt;&#x2F;li&gt;
+&lt;li&gt;static analysis will not save us. That&#x27;s your compiler&#x27;s job&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;side-effects: your function signature should tell the whole story
+&lt;ul&gt;
+&lt;li&gt;but this is not enough!&lt;&#x2F;li&gt;
+&lt;li&gt;when you want to multithread, your functions should minimize side-effects&lt;&#x2F;li&gt;
+&lt;li&gt;when you want to maintain, &lt;code&gt;mut&lt;&#x2F;code&gt; is the correct default&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;maps&lt;&#x2F;code&gt;, &lt;code&gt;iterators&lt;&#x2F;code&gt;, &lt;code&gt;collecting&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;chore-list&quot;&gt;Chore list&lt;&#x2F;h2&gt;
+&lt;p&gt;I want to&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;clean up my homepage&lt;&#x2F;li&gt;
+&lt;li&gt;parallelize my &lt;code&gt;MCTS Ramsey&lt;&#x2F;code&gt; project&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust z-code&quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;z-source z-rust&quot;&gt;&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;thread-local argmax graph&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;immutable ScoreKeeper&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;n_(a,g) -&amp;gt; n_ag&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-rust&quot;&gt;&#x2F;*&lt;&#x2F;span&gt; almost there! &lt;span class=&quot;z-punctuation z-definition z-comment z-rust&quot;&gt;*&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;clippy compliance&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-rust&quot;&gt;&#x2F;*&lt;&#x2F;span&gt; so fun! &lt;span class=&quot;z-punctuation z-definition z-comment z-rust&quot;&gt;*&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;open pictures in UI&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;do I have enough g6 tests?&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-block z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-rust&quot;&gt;&#x2F;*&lt;&#x2F;span&gt; I saw the g6 libraries! maybe use them! &lt;span class=&quot;z-punctuation z-definition z-comment z-rust&quot;&gt;*&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;on-the-fly tikz with wsl?!&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;span class=&quot;z-support z-macro z-rust&quot;&gt;todo!&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-rust&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-quoted z-double z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;optimize the guess graph&lt;span class=&quot;z-punctuation z-definition z-string z-end z-rust&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-rust&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-rust&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-rust&quot;&gt;;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;retool for a neural network&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;with the new architecture, we abandon the action queue&lt;&#x2F;li&gt;
+&lt;li&gt;sign the count matrix to indicate edges&lt;&#x2F;li&gt;
+&lt;li&gt;offset so that edges are nonzero&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;f16&lt;&#x2F;code&gt; with &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;coreylowman&#x2F;cudarc&quot;&gt;cudarc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;community tools&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cudarc&lt;&#x2F;code&gt; for Rust GPU-accelerated (split-)seed serach&lt;&#x2F;li&gt;
+&lt;li&gt;markdown guides instead of pdf&lt;&#x2F;li&gt;
+&lt;li&gt;simpler tool for resetting save files&lt;&#x2F;li&gt;
+&lt;li&gt;better ergonomics &amp;amp; lowering the barrier to (re)entry&lt;&#x2F;li&gt;
+&lt;li&gt;regex tool for tabulating submitted run data&lt;&#x2F;li&gt;
+&lt;li&gt;auto seed searching (the dream)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+</feed>

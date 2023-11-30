@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Dr. Alex Riasanovsky - dfdx</title>
+	<link href="https://riasanovsky.me/tags/dfdx/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://riasanovsky.me"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2023-04-12T00:00:00+00:00</updated>
+	<id>https://riasanovsky.me/tags/dfdx/atom.xml</id>
+	<entry xml:lang="en">
+		<title>First day of nice weather</title>
+		<published>2023-04-12T00:00:00+00:00</published>
+		<updated>2023-04-12T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://riasanovsky.me/posts/workflow/" type="text/html"/>
+		<id>https://riasanovsky.me/posts/workflow/</id>
+		<content type="html">&lt;h2 id=&quot;finally-a-real-spring&quot;&gt;finally a real Spring&lt;&#x2F;h2&gt;
+&lt;p&gt;What fantastic weather. What a cathartic run. Angus loved the view from the window and skittered all around the house in excitement.&lt;&#x2F;p&gt;
+&lt;img height = &quot;300px&quot; src=&quot;&#x2F;angus&#x2F;spring_boy_zero_thoughts_in_his_head.jpg&quot; &#x2F;&gt;
+&lt;h2 id=&quot;today-i-have-been-thinking-about&quot;&gt;Today I have been thinking about&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;our tech stack: what does modern code look like? how can I help without overstepping?&lt;&#x2F;li&gt;
+&lt;li&gt;workflow:
+&lt;ul&gt;
+&lt;li&gt;would be hilarious to incorporate a &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=StMP7g-0wK4&quot;&gt;FOSS LLM&lt;&#x2F;a&gt; into an app&lt;&#x2F;li&gt;
+&lt;li&gt;I saw some of the &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;corelo1&quot;&gt;dfdx work stream&lt;&#x2F;a&gt; and try CoPilot&lt;&#x2F;li&gt;
+&lt;li&gt;improving module structure and error-gonomics for more maintainability&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;towardsdatascience.com&#x2F;nine-rules-for-creating-fast-safe-and-compatible-data-structures-in-rust-part-1-c0973092e0a3&quot;&gt;plagiarize the standard library&lt;&#x2F;a&gt; when designing your API&lt;&#x2F;li&gt;
+&lt;li&gt;what&#x27;s the best way to strap together run-and-tests apps for CI&#x2F;CT&#x2F;CD?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;projects:
+&lt;ul&gt;
+&lt;li&gt;how much time can I commit to MCTS Ramsey?&lt;&#x2F;li&gt;
+&lt;li&gt;should I try to help with dfdx?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;design patterns:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Result&amp;lt;Option&amp;lt;T&amp;gt;&amp;gt;&lt;&#x2F;code&gt; is neat&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;try_into&lt;&#x2F;code&gt; factories&lt;&#x2F;li&gt;
+&lt;li&gt;custom iterators&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;growth:
+&lt;ul&gt;
+&lt;li&gt;how does interest become collaboration?&lt;&#x2F;li&gt;
+&lt;li&gt;how do I know when work is done?&lt;&#x2F;li&gt;
+&lt;li&gt;if I ask for more, what do I get in return?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;do-i-enjoy-regular-expressions-too-much&quot;&gt;Do I enjoy regular expressions... too much&lt;&#x2F;h2&gt;
+&lt;p&gt;??? Jury&#x27;s still out.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

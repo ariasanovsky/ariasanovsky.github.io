@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Dr. Alex Riasanovsky - Ghirlandina tower</title>
+	<link href="https://riasanovsky.me/tags/ghirlandina-tower/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://riasanovsky.me"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2023-04-16T00:00:00+00:00</updated>
+	<id>https://riasanovsky.me/tags/ghirlandina-tower/atom.xml</id>
+	<entry xml:lang="en">
+		<title>The Slanting Tower of Ghirlandina</title>
+		<published>2023-04-16T00:00:00+00:00</published>
+		<updated>2023-04-16T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://riasanovsky.me/posts/crooked-tower/" type="text/html"/>
+		<id>https://riasanovsky.me/posts/crooked-tower/</id>
+		<content type="html">&lt;h2 id=&quot;this-tower-is-crooked&quot;&gt;This tower is crooked&lt;&#x2F;h2&gt;
+&lt;img height = &quot;300px&quot; src=&quot;&#x2F;self&#x2F;crooked-Ghirlandina-tower.jpg&quot; &#x2F;&gt;
+&lt;p&gt;I&#x27;m not sure the photo does it justice.
+It was disorienting.
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Torre_della_Ghirlandina&quot;&gt;Wikipedia&lt;&#x2F;a&gt; doesn&#x27;t mention the bizarre angle. 
+The WHC mentions its preservation loosely in their &lt;a href=&quot;https:&#x2F;&#x2F;whc.unesco.org&#x2F;en&#x2F;list&#x2F;827&quot;&gt;article&lt;&#x2F;a&gt; on its UNESCO status.
+Oddly, &lt;a href=&quot;https:&#x2F;&#x2F;www.tripadvisor.com&#x2F;ShowUserReviews-g187803-d2394402-r576854173-Ghirlandina-Modena_Province_of_Modena_Emilia_Romagna.html&quot;&gt;this one Trip Advisor review&lt;&#x2F;a&gt; was the first page I could find that explicitly mentions its tilt!
+Maybe &lt;a href=&quot;https:&#x2F;&#x2F;www.researchgate.net&#x2F;publication&#x2F;276461120_Identification_Technique_for_Soil-Structure_Analysis_of_the_Ghirlandina_Tower&quot;&gt;dirt&lt;&#x2F;a&gt; is to blame.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Dr. Alex Riasanovsky - ML</title>
+	<link href="https://riasanovsky.me/tags/ml/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://riasanovsky.me"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2023-09-30T00:00:00+00:00</updated>
+	<id>https://riasanovsky.me/tags/ml/atom.xml</id>
+	<entry xml:lang="en">
+		<title>A Monte Carlo Tree Search for Reward-Friendly Optimization Problems</title>
+		<published>2023-09-30T00:00:00+00:00</published>
+		<updated>2023-09-30T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://riasanovsky.me/posts/2023-09-mcts/" type="text/html"/>
+		<id>https://riasanovsky.me/posts/2023-09-mcts/</id>
+		<content type="html">&lt;p&gt;This post is the whitepaper for a modification I am making to the AlphaZero algorithm for a family of optimization problems I am interested in.
+We expose the topic and end with a technical breakdown of the key data structure used.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;&#x2F;h2&gt;
+&lt;p&gt;Pick your favorite state space $\mathcal{S}$ and endow each $s\in\mathcal{S}$ with a set $\mathcal{A}(s)$ of actions.
+For each \(a\in\mathcal{A}(s)\), then $as\in \mathcal{S}$ is formed by taking $a$ from $s$.
+The value of $as$ may be deterministic or stochastic (e.g., in the context of single-player games) or policy-dependent (e.g., in the context of multiplayer games).
+If $\mathcal{A}(s) = \emptyset$, then $s$ is &lt;em&gt;terminal&lt;&#x2F;em&gt;.
+Additionally, for each terminal $s$, we have a valuation $v(s)$ which we seek to optimize.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;chess&quot;&gt;Chess&lt;&#x2F;h3&gt;
+&lt;p&gt;In this classic example, we play as White against an opponent playing with some fixed policy.
+Here,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathcal{S}$: All possible chess board positions with White to play.
+&lt;ul&gt;
+&lt;li&gt;This includes piece positions, the states of castling, and information about $3$-fold repetition and the $50$-move rules.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$\mathcal{A}$: All legal moves for White to play.&lt;&#x2F;li&gt;
+&lt;li&gt;$as$: When White takes move $a$, a board $s&#x27;$ with Black to play is formed; Black plays according to their policy, producing a board $as$ with White to play.
+&lt;ul&gt;
+&lt;li&gt;When Black has no move, instead $as$ is the board $s&#x27;$ with a decoration that White has won or forced a stalemate.&lt;&#x2F;li&gt;
+&lt;li&gt;This requires a small modification to the defintion of $\mathcal{S}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$v(s)$: If the game is over, a score of $+1,$ $0,$ or $-1$ indicates the winning player.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If White and Black play with respect to stochastic policies $\pi_W, \pi_B$, then we are encouraged to extend $v$ from terminal states to $$v_{\pi_W, \pi_B}(s) := \mathbb{E}[v(s&#x27;) : \text{from }s, \text{terminal state }s&#x27;\text{ is reached when Black and White follow }\pi_W\text{ and }\pi_B,\text{respectively}]$$&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;space-invaders&quot;&gt;Space Invaders&lt;&#x2F;h3&gt;
+&lt;p&gt;In this example:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathcal{S}$: all possible single-frame game states in the game &lt;em&gt;Space Invaders&lt;&#x2F;em&gt;
+&lt;ul&gt;
+&lt;li&gt;this includes positions and velocities of the player and all asteriods&lt;&#x2F;li&gt;
+&lt;li&gt;it also includes score and other internal game states&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$\mathcal{A}(s)$: combinations of button inputs legal in &lt;em&gt;Space Invaders&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;$as$: the result of playing a combination $a$ of buttons for a frame from state $s$&lt;&#x2F;li&gt;
+&lt;li&gt;$v(s)$: if the game is over, the player&#x27;s current score.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While it may be tempting to extend $v$ to $\mathcal{S}$ with the &lt;em&gt;current score&lt;&#x2F;em&gt; function, we follow the previous convention:&lt;&#x2F;p&gt;
+&lt;p&gt;$$v_{\pi}(s) := \mathbb{E}[v(s&#x27;) : \text{from }s, \text{terminal state }s&#x27;\text{ is reached when the player follows }\pi]$$&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;policies&quot;&gt;Policies&lt;&#x2F;h2&gt;
+&lt;p&gt;A policy maps each nonterminal state $s$ to a probability distribution over $\mathcal{A}(s)$.
+Some policies are better than others, as determined by component-wise comparison.
+That is, we may say that $\pi\leq \pi&#x27;$ if for all states $s$, $v_\pi(s)\leq v_{\pi&#x27;}(s)$.
+Finding optimal policies is intractible, even when $\mathcal{S}$ and $\mathcal{A}(s)$ are finite and state transitions are deterministic.&lt;&#x2F;p&gt;
+&lt;p&gt;We are forced to make tradeoffs when defining our policy $\pi$:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;implementation&lt;&#x2F;strong&gt;: how to store $\pi$ so it can quickly evaluate states, but also be fine-tuned with new data,&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;exploitation&lt;&#x2F;strong&gt;: how much to trust that $\pi$ will lead us to the best terminal states if we follow it greedily, and&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;exploration&lt;&#x2F;strong&gt;: how much to distrust $\pi$, taking less preferred actions in order to gather data counteracting our bias.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;monte-carlo-tree-search&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Monte_Carlo_tree_search&quot;&gt;Monte Carlo Tree Search&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;When building a policy $\pi$ from nothing, we conduct a tree search as following:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$s_{\text{root}}$: select a root in $S$ and build a tree&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;transitions&lt;&#x2F;strong&gt;: Explore from the root, recording the transitions $(a_1, s_1), \cdots, (a_t, s_t)$.
+&lt;ul&gt;
+&lt;li&gt;For all $i=1..t$, $a_i\in\mathcal{A}(s_{i-1})$ is the action taken from $s_{i-1}$, which produced $s_i$.&lt;&#x2F;li&gt;
+&lt;li&gt;$v$: $s_t$ is terminal with value $v = v(s_t)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;biases&lt;&#x2F;strong&gt;: When selecting an action $a\in\mathcal{A}(s)$, we bias ourselves to:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;exploration&lt;&#x2F;strong&gt;: Infrequently visited state-action pairs are preferable.
+&lt;ul&gt;
+&lt;li&gt;Log the values $n(s)$, the number of actions taken from $s$ during the tree&#x27;s lifetime.&lt;&#x2F;li&gt;
+&lt;li&gt;Log also the values $n(s, a)$, the number of visits to $(s, a)$.
+&lt;ul&gt;
+&lt;li&gt;If practical, we may have access to $n(sa)$ and do not need to define $n(s, a)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;score&lt;&#x2F;strong&gt;: Actions which previously led to a high score are preferable.
+&lt;ul&gt;
+&lt;li&gt;Log $w(s, a)$, the sum of all terminal scores over all explored paths with the transition $(s, a)$.
+&lt;ul&gt;
+&lt;li&gt;If practical, we may instead log $w(s)$ defined similarly and use $w(sa)$ to inform us about $a$.&lt;&#x2F;li&gt;
+&lt;li&gt;This complicates how the average of $w$ is calculated.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;We are biased to take $a$ from $s$ if $w(s, a) &#x2F; n(s, a)$ is high.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This begs several imporatant questions:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;prior distributions&lt;&#x2F;strong&gt;: How should pick actions from unvisited nodes?
+&lt;ul&gt;
+&lt;li&gt;When the tree is initialized, all values of $n(s), n(s, a),$ and $w(s, a)$ are $0$.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;A priori&lt;&#x2F;em&gt;, we have no bias to suggest what action to take.&lt;&#x2F;li&gt;
+&lt;li&gt;In most games, uniform distrubtions are terrible guesses.&lt;&#x2F;li&gt;
+&lt;li&gt;We encounter this problem each time a new (nonterminal) node is added to the tree.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;bias terms&lt;&#x2F;strong&gt;: How should we pick actions from visited nodes?
+&lt;ul&gt;
+&lt;li&gt;Even when $s$ has been visited, what is biases us towards one action over another? For example, $$\dfrac{w(s, a)}{n(s, a)} + c\cdot\dfrac{\sqrt{n(s)}}{n(s, a)}.$$
+&lt;ul&gt;
+&lt;li&gt;This choice is extremely arbitrary. Many others may perform better.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;How practically can we store information about every visited action from every visited state?&lt;&#x2F;li&gt;
+&lt;li&gt;How fast will we converge to an optimal policy, if at all?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;learning&lt;&#x2F;strong&gt;: Are we expected to trust our observations?
+&lt;ul&gt;
+&lt;li&gt;Is the policy identical to the entire tree?&lt;&#x2F;li&gt;
+&lt;li&gt;How practically can we use it in future simulations?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;alphazero&quot;&gt;AlphaZero&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;formulation&quot;&gt;Formulation&lt;&#x2F;h3&gt;
+&lt;p&gt;In this paper, the DeepMind team made crucial modifications to the classical MCTS search.
+First, they use an artificial neural network to define a model $$f_\theta: \mathcal{S}\to\mathbb{R}^{|\mathcal{A}| + 1}.$$&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;By assumption, there exists a finite set $\mathcal{A}$ such that for all $s\in\mathcal{S}$, $\mathcal{A}(s)\subseteq\mathcal{A}$.&lt;&#x2F;li&gt;
+&lt;li&gt;Here, $\theta$ is a high-dimensional real-valued vector of weights and biases for the underlying artificial neural network.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For each $s\in\mathcal{S}$, we interpret $f_\theta(s)$ as the direct sum of $p_\theta(s, \cdot)$ and $v_\theta(s)$.
+Here:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$p_\theta(s,\cdot)\in\mathbb{R}^{|\mathcal{A}|}$ may be interpreted as a probability distribution over $\mathcal{A}$.
+&lt;ul&gt;
+&lt;li&gt;The actions in $\mathcal{A}\setminus\mathcal{A}(s)$ are ignored.&lt;&#x2F;li&gt;
+&lt;li&gt;We may choose to normalize with the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Softmax_function&quot;&gt;softmax&lt;&#x2F;a&gt; function or a simple average.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$v_\theta(s)\in\mathbb{R}$: a prediction for the terminal value of $v$ when following a policy defined as a function of $\theta$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt;: In fact, $p_\theta(s, \cdot)$ is also a prediction.
+The model $f_\theta$ estimates the probability distribution of our agent, whose policy is defined as a function of $f_\theta$!&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;learning-loop&quot;&gt;Learning loop&lt;&#x2F;h3&gt;
+&lt;p&gt;Rather than store large swaths of information in a Monte Carlo tree, our learning loop is as follows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;plant many trees&lt;&#x2F;strong&gt;: Create a batch of search trees to explore in parallel.
+&lt;ul&gt;
+&lt;li&gt;Select roots with a bias towards high values of $v_\theta$.&lt;&#x2F;li&gt;
+&lt;li&gt;Avoid batches of roots that are &amp;quot;similar&amp;quot; to each other. Perhaps $\mathcal{S}$ has a distance metric.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;trust the model&lt;&#x2F;strong&gt;: The model may be used to enhance the search algorithm.&lt;&#x2F;li&gt;
+&lt;li&gt;$p_\theta(s, a)$: Use this value to adjust the bias towards taking action $a$ from $s$.
+&lt;ul&gt;
+&lt;li&gt;Dirichlet noise is added to encourage exploration.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$v_\theta(s)$: When we encounter $s$, and is not terminal and unvisited, add $s$ to the tree and use $v_\theta(s)$.
+&lt;ul&gt;
+&lt;li&gt;Since $s$ is not terminal, we may need to take many actions to reach a terminal state.&lt;&#x2F;li&gt;
+&lt;li&gt;Trust the model&#x27;s prediction will improve over time.&lt;&#x2F;li&gt;
+&lt;li&gt;If $s$ is visited later, we will play moves from $a$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;chopped trees&lt;&#x2F;strong&gt;: Suppose a tree is rooted at $s_0$.
+&lt;ul&gt;
+&lt;li&gt;After a few thousands simulations, we have explored a few thousand paths.&lt;&#x2F;li&gt;
+&lt;li&gt;Many of those pathes ended by adding a new node to the tree and using $v_\theta$ to estimate the ending value.&lt;&#x2F;li&gt;
+&lt;li&gt;Many ended with a terminal state.&lt;&#x2F;li&gt;
+&lt;li&gt;Inside the tree, we have recorded $n(s_0)$ and $n(s_0, a)$ for all $a\in\mathcal{A}(s_0)$.&lt;&#x2F;li&gt;
+&lt;li&gt;We also have recorded $w(s_0)$ and $w(s_0, a)$ for all $a\in\mathcal{A}(s_0)$.&lt;&#x2F;li&gt;
+&lt;li&gt;We emit $p_{\text{obs}} = (n(s_0, a)&#x2F;n(s_0))_{a\in\mathcal{A}}$.&lt;&#x2F;li&gt;
+&lt;li&gt;We also emit $v_{\text{obs}} = w(s_0)\cdot&#x2F;n(s_0)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;model updates&lt;&#x2F;strong&gt;: With a batch of observations, we adjust the parameters $\theta$ in our model to decrease a loss function.
+&lt;ul&gt;
+&lt;li&gt;Our batch consists of:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;roots&lt;&#x2F;strong&gt;: $(s_i)_{i=1..B}$,&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;observed values&lt;&#x2F;strong&gt;: $(v_{\text{obs, i}})_{i=1..B}$, and&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;observed probabilities&lt;&#x2F;strong&gt;: $(p_{\text{obs, i}})_{i=1..B}$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Loss includes terms such as:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mis-estimated values&lt;&#x2F;strong&gt;: $(v_\theta(s_i) - v_{\text{obs, i}})^2$&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;cross-entropy&lt;&#x2F;strong&gt;: $H(p, p) = -\sum_a p_{\text{obs, i}}(a)\cdot\log(p_\theta(s_i, a))$&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;overfitting&lt;&#x2F;strong&gt;: $|\theta|_2^2$. (a.k.a. &lt;em&gt;regularization&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;irtree&quot;&gt;&lt;code&gt;IRTree&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This is my tentative name for a modification of AlphaZero to the context of mathematical optimization.
+Here:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;I(nitial)&lt;&#x2F;code&gt;: The value of $c(s)$ is only calculated directly for root states. All remaining values are computed dynamic with the reward function.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;R(eward)&lt;&#x2F;code&gt;: When a state $s$ is added to the tree, we immediately record the reward function $r(s, \cdot)$ into memory.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;assumptions&quot;&gt;Assumptions&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;There exists a cost function $c:\mathcal{S}\to\mathbb{R}$ to minimize.&lt;&#x2F;li&gt;
+&lt;li&gt;For all $s\in\mathcal{S}$, the reward function $r(s, \cdot): \mathcal{A}(s)\to\mathbb{R}$ is convenient to compute as a function of $s$.
+&lt;ul&gt;
+&lt;li&gt;Here, for all $a\in\mathcal{A}(s)$, $r(s, a) = c(s) - c(as)$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;transitions&quot;&gt;Transitions&lt;&#x2F;h3&gt;
+&lt;p&gt;Since we have a cheap reward function, we instead update the tree with improvement in the cost function &lt;em&gt;after&lt;&#x2F;em&gt; visiting $(s, a)$.
+Suppose $s_0\in\mathcal{S}$ and $\ell\in\mathbb{N}$. Suppose furthermore that $t = (t_i)_{i=1..\ell}\in(\mathcal{S}\times\mathbb{R}\times\mathcal{A})^\ell$ such that for all $i=1..\ell$:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$t_i = (a_i, r_i, s_i)\in\mathcal{A}\times\mathbb{R}\times\mathcal{S}$,&lt;&#x2F;li&gt;
+&lt;li&gt;$a_i\in\mathcal{A}(s_{i-1})$ and $r_i = r(s_{i-1}, a_i)$, and&lt;&#x2F;li&gt;
+&lt;li&gt;$s_i = a_is_{i-1}$.
+Then we say that $t$ are the &lt;em&gt;transitions (of a path of length $\ell$ corresponding to $c$) from $s_0$&lt;&#x2F;em&gt;. Then we define the &lt;em&gt;max gains&lt;&#x2F;em&gt; $g^\ast = g_t^\ast = (g_i^\ast)_{i=0..t}$ (of $c$, from $s_0$, along $t$) as follows:&lt;&#x2F;li&gt;
+&lt;li&gt;$g_t^\ast = 0$, and&lt;&#x2F;li&gt;
+&lt;li&gt;$g_i^\ast = \max(0, r_{i+1} + g_{i+1}^\ast)$ for all $i = 0..t-1$.
+Note that for all $i = 0..t$, $$g_i^\ast = \max_{j = i..t}(r_{i+1} +\cdots+r_j).$$ Additionally, if $j^\ast$ attains the maximum with respect to $i$, then $j^\ast$ also attains $$\min_{j=i..t}c(s_j).$$
+Finally, suppose $j$ attains the above maximum (or maxima) with respect to $i = 0$. Then we say that &lt;em&gt;$t$ observes an improvement in $c$ of &lt;em&gt;$g_0^\ast$&lt;&#x2F;em&gt; from $s_0$ (at $s_j$)&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Finally, suppose we have a model (with parameters $\theta$) which defines a prediction function $g_\theta^\ast:\mathcal{S}\to\mathbb{R}$. Then as above, we define the &lt;em&gt;predicted max gains&lt;&#x2F;em&gt; $h_{\theta}^\ast = h_{\theta, t}^{\ast} = (h_{i}^{\ast})_{i=0..t}$ (of $c$, from $s_0$, along $t$, with respect to $\theta$) as follows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$h_t^\ast = \max 0, g_\theta^\ast$, and&lt;&#x2F;li&gt;
+&lt;li&gt;$h_i^\ast = \max(0, r_{i+1} + h_{i+1}^\ast)$ for all $i = 0..t-1$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For convenience, we extend $r = (r_i)_{i=1..t}$ to&lt;&#x2F;p&gt;
+&lt;p&gt;$$r&#x27; = (r_i&#x27;)_{i=1..t+1}$$&lt;&#x2F;p&gt;
+&lt;p&gt;by letting $r_i&#x27; := r_i$ for all $i = 1..t$ and $r_{t+1}&#x27; := g_\theta^\ast(s_t)$.&lt;&#x2F;p&gt;
+&lt;p&gt;As before, we note that for all $i = 0..t$,&lt;&#x2F;p&gt;
+&lt;p&gt;$$h_i^\ast = \max_{j=i..t+1}(r_{i+1}&#x27;+\cdots+r_j&#x27;).$$&lt;&#x2F;p&gt;
+&lt;p&gt;For a final observation, let&lt;&#x2F;p&gt;
+&lt;p&gt;$$c&#x27; := (c_i&#x27;)_{i=0..t+1}$$&lt;&#x2F;p&gt;
+&lt;p&gt;where $c_i&#x27; := c(s_i)$ for all $i = 0..t$ and $c_{t+1}&#x27; := c(s_t) + g_\theta^\ast(s_t)$. Then the maxima of $h_i^\ast$ and the minima of $c_i&#x27;$ are identical.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;model&quot;&gt;Model&lt;&#x2F;h3&gt;
+&lt;p&gt;We model with prediction function $$f_\theta(s) = \left(\begin{array}{r}
+p_\theta(s, \cdot)\
+g_\theta(s)\
+g_\theta^\ast(s)\
+\tilde{g}_\theta^\ast(s)
+\end{array}\right)$$&lt;&#x2F;p&gt;
+&lt;p&gt;Here, we predict:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$g_\theta(s)$: the expected value of $c(s) - c(s&#x27;)$ if a search starting with $s$ ends at terminal node $s&#x27;$.&lt;&#x2F;li&gt;
+&lt;li&gt;$g_\theta^\ast(s)$: the maximum value of $c(s) - c(s&#x27;)$ over all paths explored during the search.
+&lt;ul&gt;
+&lt;li&gt;The number of paths explored is fixed.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$\tilde{g}_\theta^\ast$: the expected maximum value of $c(s) - c(s&#x27;)$ if a search starts with $s$ and passes through $s&#x27;$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;We iteratively search and modify a tree $m$ rooted at some $s_{\text{root}}\in\mathcal{S}$.
+Each search in $m$ begins at $s_0 = s_{\text{root}}$, corresponds to a sequence $t = (t_i)_{i=1..\ell}$
+of transitions as defined above.&lt;&#x2F;p&gt;
+&lt;p&gt;Inside $m$, we identify states by a canonical path from $s_{\text{root}}$. Given the decomposition of each reward function as $$r(s, \cdot) = f(s, \cdot) + k(s, \cdot),$$ we store for each visited $s\in\mathcal{S}$ the following unchanging information inside $m$, in some implicit form:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;(mut)&lt;&#x2F;code&gt; $n(s)\in\mathbb{N}$, the frequency of $s$&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;(mut)&lt;&#x2F;code&gt; $\tilde{r}(s, \cdot): \mathcal{A}(s)\to\mathbb{R}$, our best estimate for $r(s, \cdot)$
+&lt;ul&gt;
+&lt;li&gt;initially $f(s, \cdot)$, and $\tilde{r}(s, a)$ is replaced by $f(s, a) + k(s, a)$ when $(s, a)$ is visited&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;$p_\theta(s, \cdot): \mathcal{A}(s)\to\mathbb{R}$
+Additionally, for each $a\in\mathcal{A}(s)$ taken from $s$ during the any search through $m$, we store:&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;(mut)&lt;&#x2F;code&gt; $n(s, a)\in\mathbb{N}$, the frequency of $(s, a)$&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;(mut)&lt;&#x2F;code&gt; $\gamma(s, a)$ described below.
+Here, $\gamma(s, a)$ is the total predicted max gains from $sa$ over all searches where $a$ is taken from $s$. In other words, we increment $\gamma(s, a)$ by $\tilde{g}_j^\ast$ in the following circumstance:&lt;&#x2F;li&gt;
+&lt;li&gt;a search in $m$ corresponds to a sequence $t = (t_i)_{i=1..\ell}$&lt;&#x2F;li&gt;
+&lt;li&gt;$t_j = (a, r_j, s_j)$ and $s_{j-1} = s$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;estimates&quot;&gt;Estimates&lt;&#x2F;h3&gt;
+&lt;p&gt;With tree $m$ rooted at $s_{\text{root}}$, we search $m$ for states which minimize $c$ . For our policy, we choose the upper estimate function defined by $$u(s, a) := \tilde{r}(s, a) + \overline{\gamma}(s, a) + C\cdot p(s, a)\cdot \dfrac{\sqrt{n(s)}}{1+n(s, a)}$$
+where $\overline{\gamma}(s, a) = 0$ if $(s, a)$ is unvisited (i.e., $n(s, a) = 0$) and otherwise, $\overline{\gamma}(s, a) = \gamma(s, a) &#x2F; n(s, a)$.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
